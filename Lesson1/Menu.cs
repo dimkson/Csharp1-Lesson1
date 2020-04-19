@@ -40,30 +40,30 @@ namespace MenuClass
 
     static class FastConsole
     {
-        //public static void Input(string str, out int num)
-        //{
-        //    Console.WriteLine(str);
-        //    int.TryParse(Console.ReadLine(), out num);
-        //}
-        //public static void Input(string str, out double num)
-        //{
-        //    Console.WriteLine(str);
-        //    double.TryParse(Console.ReadLine(), out num);
-        //}
-
-        public static void Input<T>(string str, out T num) where T : struct
+        public static void Input(string str, out int num)
         {
             Console.WriteLine(str);
-            try
-            {
-                num = (T)Convert.ChangeType(Console.ReadLine(), typeof(T));
-            }
-            catch
-            {
-                num = default;
-                Console.WriteLine("Некорректный ввод!");
-            }
+            int.TryParse(Console.ReadLine(), out num);
         }
+        public static void Input(string str, out double num)
+        {
+            Console.WriteLine(str);
+            double.TryParse(Console.ReadLine(), out num);
+        }
+
+        //public static void Input<T>(string str, out T num) where T : struct
+        //{
+        //    Console.WriteLine(str);
+        //    try
+        //    {
+        //        num = (T)Convert.ChangeType(Console.ReadLine(), typeof(T));
+        //    }
+        //    catch
+        //    {
+        //        num = default;
+        //        Console.WriteLine("Некорректный ввод!");
+        //    }
+        //}
         public static string Input(string str)
         {
             Console.WriteLine(str);
