@@ -49,24 +49,23 @@ namespace Lesson1
         struct Coordinats
         {
             public int x, y;
+
+            public static double Calc(Coordinats c1, Coordinats c2)
+            {
+                return Math.Sqrt(Math.Pow(c2.x - c1.x, 2) + Math.Pow(c2.y - c1.y, 2));
+            }
         }
 
         static void Task3()
         {
             //Расстояние между двумя точками
-            Coordinats c1 = new Coordinats();
-            Coordinats c2 = new Coordinats();
+            Coordinats c1, c2;
             FC.Input("Введите координату x1", out c1.x);
             FC.Input("Введите координату y1", out c1.y);
             FC.Input("Введите координату x2", out c2.x);
             FC.Input("Введите координату y2", out c2.y);
-            Console.WriteLine($"Расстояние между двумя точками равно {Calc(c1, c2):#.##}");
+            Console.WriteLine($"Расстояние между двумя точками равно {Coordinats.Calc(c1, c2):#.##}");
             FC.Pause();
-        }
-
-        static double Calc(Coordinats c1, Coordinats c2)
-        {
-            return Math.Sqrt(Math.Pow(c2.x - c1.x, 2) + Math.Pow(c2.y - c1.y, 2));
         }
         #endregion
 
